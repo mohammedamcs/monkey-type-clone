@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey type</title>
+    <!-- Main CSS File  -->
+    <link rel="stylesheet" href="./master.css">
+    <!-- Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik+Bubbles&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img id="logo" src="images/logo.svg" alt="logo">
+                <h1>monkeytype</h1>
+            </div>
+            <div class="actions">
+                <div id="startBtn" class="action" title="start test">
+                    <i class="fa-solid fa-keyboard"></i>
+                </div>
+                <div class="action" title="toggle-mode">
+                    <input type="checkbox" id="light-mode-toggle">
+                    <label for="light-mode-toggle">
+                        <img class="moon" src="images/moon.png" alt="moon-icon">
+                        <img class="sun" src="images/sun-icon.svg" alt="sun-icon">
+                    </label>
+                </div>
+            </div>
+            <input type="text" name="user-input" id="userInput" value="">
+        </header>
+        <main>
+            <div class="test-config-result">
+                <div class="test-config">
+                    <div class="config">
+                        <div class="button">
+                            <input type="checkbox" id="punctuation" name="include-to-test" value="punctuation">
+                            <label for="punctuation"><i class="fa-solid fa-at"></i> punctuation</label>
+                        </div>
+                        <div class="button">
+                            <input type="checkbox" id="numbers" name="include-to-test" value="numbers">
+                            <label for="numbers"><i class="fa-solid fa-hashtag"></i> numbers</label>
+                        </div>
+                    </div>
+                    <div class="spelter"></div>
+                    <div class="config">
+                        <div class="button">
+                            <input type="radio" id="time" name="test-by" value="time" checked>
+                            <label for="time"><i class="fa-solid fa-clock"></i> time</label>
+                        </div>
+                        <div class="button">
+                            <input type="radio" id="words" name="test-by" value="words">
+                            <label for="words"><i class="fa-solid fa-a"></i> words</label>
+                        </div>
+                    </div>
+                    <div class="spelter"></div>
+                    <div class="config">
+                        <div class="time-word-config">
+                            <input type="radio" id="15" name="time-word-config" value="15">
+                            <label for="15">15</label>
+                        </div>
+                        <div class="time-word-config">
+                            <input type="radio" id="30" name="time-word-config" value="30">
+                            <label for="30">30</label>
+                        </div>
+                        <div class="time-word-config">
+                            <input type="radio" id="60" name="time-word-config" value="60" checked>
+                            <label for="60">60</label>
+                        </div>
+                        <div class="time-word-config">
+                            <input type="radio" id="100" name="time-word-config" value="100">
+                            <label for="100">100</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-results">
+                    <div class="col">
+                        <div class="result big-text">
+                            <span class="result-head">WPM</span>
+                            <span class="result-value wpm">43</span>
+                        </div>
+
+                        <div class="result big-text">
+                            <span class="result-head">acc</span>
+                            <span class="result-value acc">96%</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="result">
+                            <span class="result-head">test type</span>
+                            <span class="result-value test-type">
+                               
+                            </span>
+                        </div>
+                        <div class="result">
+                            <span class="result-head">finished time</span>
+                            <span class="result-value time">0:15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="typing-test">
+                <div class="time-word-info"></div>
+                <div class="test shadow">
+                    <div class="overlay">
+                        <i class="fa-solid fa-arrow-pointer"></i>
+                        Click here to activate the test...
+                    </div>
+                    <div class="starting-text">
+                        lipsum dolor sit amet consectetur adipisicing elit. Dolor ipsum deserunt recusandae voluptatem
+                        accusamus quo quisquam cum, sunt, ullam quos laudantium velit, at atque! Voluptates animi
+                        ratione
+                        similique velit facilis.
+                    </div>
+                    <div class="test-text">
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </main>
+
+    </div>
+
+    <script src="js/toggleMode.js"></script>
+    <script src="js/index.js" type="module"></script>
+    <script src="js/testConfig.js" type="module"></script>
+    <script src="js/initTest.js" type="module"></script>
+</body>
+
+</html>

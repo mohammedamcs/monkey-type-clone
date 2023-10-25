@@ -1,0 +1,396 @@
+/* Start Global Variables  */
+:root {
+    --background-color: #323437;
+    --text-color: #d1d0c5;
+    --text-alt-color: #646669;
+    --main-color: #e2b714;
+    --sub-color: #2c2e31;
+    --sub-alt-color: #646669;
+    --error-color: #da3333;
+}
+
+/* End Global Variables  */
+
+
+/* Start Global Rules  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+    min-height: 100vh;
+    transition: all .5s;
+    user-select: none;
+}
+
+.container {
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 50px 1fr 100px;
+    gap: 20px;
+}
+
+
+.light-mode {
+    --background-color: #efead0;
+    --text-color: #333538;
+    --text-alt-color: #646669;
+    --main-color: #1FAB89;
+    --sub-color: #dbd6c4;
+    --sub-alt-color: #8f8e84;
+    --error-color: #FA1616;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+#userInput {
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+
+
+/* End Global Rules  */
+
+/* Start Header Styling  */
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    height: 24px;
+    color: var(--main-color);
+}
+
+header .logo h1 {
+    margin-top: -8px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+header .logo h1::before {
+    content: 'monkey see';
+    font-size: 10px;
+    position: absolute;
+    word-spacing: -3px;
+    letter-spacing: 0;
+    color: var(--text-alt-color);
+}
+
+header .actions .action {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .actions {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .actions .action i {
+    color: var(--text-alt-color);
+}
+
+header .actions .action i:hover {
+    color: var(--text-color);
+}
+
+header .actions input[type='checkbox'] {
+    appearance: none;
+}
+
+header .actions label {
+    width: 80px;
+    height: 28px;
+    display: block;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s;
+    background-color: var(--main-color);
+    user-select: none;
+}
+
+header .actions label::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    transition: all .3s;
+}
+
+header .actions input:checked+label::before {
+    left: 55px;
+}
+
+header .actions label img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    z-index: 1;
+}
+
+header .actions label img.moon {
+    left: 5px;
+}
+
+header .actions label img.sun {
+    right: 5px;
+
+}
+
+/* End Header Styling  */
+
+/* Start Main Section Styling  */
+main {
+    display: grid;
+    grid-template-rows: minmax(200px,auto) 1fr;
+}
+
+/* Start Test Configuration Section Styling  */
+main .test-config {
+    background-color: var(--sub-color);
+    display: flex;
+    font-size: 12px;
+    width: 600px;
+    margin: 20px auto 0;
+    padding: 10px;
+    border-radius: 6px;
+    color: var(--text-alt-color);
+}
+
+main .test-config.hide {
+    display: none;
+}
+
+main .test-config .config {
+    display: flex;
+    flex-basis: calc((100% - 8px)/3);
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+main .test-config .config .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+main .test-config .spelter {
+    width: 4px;
+    height: 20px;
+    margin: 0 10px;
+    background-color: #323437;
+}
+
+main .test-config .config input {
+    appearance: none;
+}
+
+main .test-config .config label {
+    cursor: pointer;
+    transition: all .3s;
+}
+
+main .test-config .config label:hover {
+    color: var(--text-color);
+}
+
+main .test-config .config input:checked+label {
+    color: var(--main-color);
+}
+
+main .time-word-config.time label::after {
+    content: 's';
+}
+
+/* End Test Configuration Section Styling  */
+
+/* Start Test Result Section  */
+
+main .test-results {
+    margin: 20px auto 30px;
+    width: 420px;
+    display: none;
+}
+
+main .test-results.show {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .test-results .result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main .test-results .result .result-value {
+    color: var(--main-color);
+}
+
+main .test-results .result .result-head {
+    font-size: 16px;
+}
+
+main .test-results .result.big-text .result-head {
+    font-size: 28px;
+}
+
+main .test-results .result.big-text .result-value {
+    font-size: 48px;
+}
+main .test-results .test-type {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* End Test Result Section  */
+
+/* Start Typing Test Section */
+
+main .typing-test {
+    font-size: 24px;
+    color: var(--text-alt-color);
+}
+
+main .typing-test .time-word-info {
+    color: var(--main-color);
+    margin-bottom: 10px;
+    min-height: 32px;
+}
+
+main .typing-test .test {
+    position: relative;
+}
+
+main .typing-test .test-text {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+main .typing-test .test .word {
+    display: flex;
+}
+
+main .typing-test .test .letter {
+    min-width: 1ch;
+    display: inline-block;
+    border-left: 2px solid transparent;
+}
+
+main .typing-test .test .letter.last {
+    min-width: 1ch;
+    display: inline-block;
+    border: none;
+    margin-left: 2px;
+    border-right: 2px solid transparent;
+}
+
+
+main .typing-test .test.shadow {
+    color: transparent;
+    text-shadow: 0 0 5px rgb(100, 102, 105, 0.5);
+}
+
+main .typing-test .test .letter.cursor {
+    border-color: var(--main-color);
+    animation: blinker 1s linear infinite;
+}
+
+
+main .typing-test .test .letter.correct {
+    color: var(--text-color);
+}
+
+main .typing-test .test .letter.wrong {
+    color: var(--error-color);
+}
+
+main .typing-test .test .letter.wrong-space {
+    background-color: var(--error-color);
+}
+
+main .typing-test .test .letter.updated {
+    color: var(--main-color);
+}
+
+main .typing-test .test .letter.updated-space {
+    background-color: var(--main-color);
+}
+
+main .typing-test .test .overlay {
+    color: var(--text-color);
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+}
+
+main .typing-test .test .overlay.hide {
+    display: none;
+}
+/* End Typing Test Section */
+
+/* End Main Section Styling  */
+
+
+@keyframes blinker {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@media (max-width:991px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+}
